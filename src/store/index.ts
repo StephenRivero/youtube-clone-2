@@ -54,8 +54,7 @@ export const store = configureStore({
   },
 });
 
-// export const { clearVideos, changeSearchTerm, clearSearchTerm } =
-//   YoutubeSlice.actions;
+export const { clearVideos, changeSearchTerm, clearSearchTerm } = YoutubeSlice.actions;
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

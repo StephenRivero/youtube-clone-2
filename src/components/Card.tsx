@@ -17,10 +17,10 @@ function Card({ data }: { data: HomePageVideos }) {
                 </Link>
             </div>
             <div className="flex gap-2">
-                <div className="div min-w-fit">
+                <div className="min-w-fit">
                     <a href="#">
                         <img 
-                            src="{data.channelInfo.image}" 
+                            src={data.channelInfo.image}
                             alt="channel"
                             className='h-9 w-9 rounded-full' 
                         />
