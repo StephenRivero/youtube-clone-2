@@ -16,6 +16,37 @@ function Card({ data }: { data: HomePageVideos }) {
                     <img src={data.videoThumbnail} className='h-44 w-72' alt="Thumbnail" />
                 </Link>
             </div>
+            <div className="flex gap-2">
+                <div className="div min-w-fit">
+                    <a href="#">
+                        <img 
+                            src="{data.channelInfo.image}" 
+                            alt="channel"
+                            className='h-9 w-9 rounded-full' 
+                        />
+                    </a>
+                </div>
+                <div>
+                    <h3>
+                        <a href="#" className='line-clamp-2'>
+                            {data.videoTitle}
+                        </a>
+                    </h3>
+                    <div className="text-sm text-gray-400">
+                        <div>
+                            <a href="#" className='hover:text-white'>
+                                {data.channelInfo.name}
+                            </a>
+                        </div>
+                        <span className="after:content-['●'] after:mx-1">
+                            {data.videoViews} views
+                        </span>
+                        <span>
+                            {data.videoAge}
+                        </span>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
