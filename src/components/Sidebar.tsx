@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import {
   MdHomeFilled,
@@ -119,7 +120,7 @@ function Sidebar() {
   ];
 
   return (
-    <div className="w-[20%] lg:w-2/12 bg-[#212121] pr-5 overflow-auto pb-8 sidebar">
+    <div className="w-[20%] lg:w-2/12 3xl:w-[15%] bg-[#212121] pr-4 overflow-auto pb-8 sidebar">
       <ul className="flex flex-col border-b-2 border-gray-700">
         {mainLinks.map(({ icon, name }) => {
           return (

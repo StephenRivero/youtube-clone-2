@@ -25,22 +25,25 @@ function Home() {
 
   return (
     <div className='max-h-screen overflow-hidden'>
-      <div style={{ height: "7.5vh" }}>
+      {/* style={{ height: "7.5vh" }}  className='h-[7.5vh]'*/}
+      <div >
         <Navbar />
       </div>
       {/* lg:mt-[10px] xl:mt-[-4px] 2xl:mt-[-12px] 3xl:mt-[-25px] */}
-      {/*  */}
-      <div className='flex h-[92.5vh] xl:h-[92.9vh] 2xl:h-[93.8vh] 3xl:h-[94.7vh]'> {/* xl:mt-[-4px] style={{ height: "92.5vh" }} */}
+      {/*  h-[92.5vh] xl:h-[92.9vh] 2xl:h-[93.8vh] 3xl:h-[94.7vh] */}
+      <div className='flex h-[calc(100vh-56px)] w-full'> {/* xl:mt-[-4px] style={{ height: "92.5vh" }} */}
         <Sidebar />
         {videos.length ? (
+          
           <InfiniteScroll
             dataLength={videos.length}
             next={() => dispatch(getHomePageVideos(true))}
             hasMore={videos.length < 500}
             loader={<Spinner />}
-            height={650}
+            // height={650}
+            height={1080}
           >
-            <div className='grid gap-y-14 gap-x-8  xl:grid-cols-4 p-8'> {/* sm:grid-cols-1 lg:grid-cols-3 */}
+            <div className='grid gap-y-14 gap-x-8 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 3xl:grid-cols-5 p-4 w-full'> {/* sm:grid-cols-1 */}
               {videos.map((item: HomePageVideos) => {
                 return <Card data={item} key={item.videoId} />;
               })}
