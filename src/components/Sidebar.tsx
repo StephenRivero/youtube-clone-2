@@ -120,7 +120,7 @@ function Sidebar() {
   ];
 
   return (
-    <div className="w-[20%] lg:w-2/12 3xl:w-[15%] bg-[#212121] pr-4 overflow-auto pb-8 sidebar">
+    <div className="w-[9.5%] xl:w-2/12 3xl:w-[15%] bg-[#212121] pr-4 overflow-auto pb-8 sidebar">
       <ul className="flex flex-col border-b-2 border-gray-700">
         {mainLinks.map(({ icon, name }) => {
           return (
@@ -132,7 +132,7 @@ function Sidebar() {
             >
               <a href="#" className="flex items-center gap-5">
                 {icon}
-                <span className="text-[10px] lg:text-xs xl:text-sm tracking-wider">{name}</span>
+                <span className={`text-sm tracking-wider hidden xl:block`}>{name}</span>
               </a>
             </li>
           );
@@ -144,7 +144,7 @@ function Sidebar() {
             <li key={name} className={`pl-6 py-3 hover:bg-zinc-600 `}>
               <a href="#" className="flex items-center gap-5">
                 {icon}
-                <span className="text-sm tracking-wider">{name}</span>
+                <span className="text-sm tracking-wider hidden xl:block">{name}</span>
               </a>
             </li>
           );
@@ -156,7 +156,7 @@ function Sidebar() {
             <li key={name} className={`pl-6 py-3 hover:bg-zinc-600 `}>
               <a href="#" className="flex items-center gap-5">
                 {icon}
-                <span className="text-sm tracking-wider">{name}</span>
+                <span className="text-sm tracking-wider hidden xl:block">{name}</span>
               </a>
             </li>
           );
@@ -168,25 +168,25 @@ function Sidebar() {
             <li key={name} className={`pl-6 py-3 hover:bg-zinc-600 `}>
               <a href="#" className="flex items-center gap-5">
                 {icon}
-                <span className="text-sm tracking-wider">{name}</span>
+                <span className="text-sm tracking-wider hidden xl:block">{name}</span>
               </a>
             </li>
           );
         })}
       </ul>
-      <ul className="flex gap-2 flex-wrap text-sm p-4 text-zinc-400">
+      <ul className="hidden xl:flex gap-2 flex-wrap text-sm p-4 text-zinc-400">
         {textLinks[0].map((name) => {
           return <li key={name}>{name}</li>;
         })}
       </ul>
-      <ul className="flex gap-2 flex-wrap text-sm p-4 text-zinc-400">
+      <ul className="hidden xl:flex gap-2 flex-wrap text-sm p-4 text-zinc-400">
         {textLinks[1].map((name) => {
           return <li key={name}>{name}</li>;
         })}
       </ul>
-      <span className="flex flex-wrap 2xl:flex-nowrap  px-4 text-sm text-zinc-400">&copy; 2023 <p className="2xl:ml-2">@ Stephen Rivero</p></span>
+      <span className="hidden xl:flex flex-wrap 2xl:flex-nowrap  px-4 text-sm text-zinc-400">&copy; 2023 <p className="2xl:ml-2">@ Stephen Rivero</p></span>
       <br />
-      <p className="px-4 pt-3 text-sm text-zinc-400">
+      <p className="hidden xl:flex px-4 pt-3 text-sm text-zinc-400">
         This clone is for educational purpose only.
       </p>
     </div>
