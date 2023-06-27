@@ -121,7 +121,7 @@ function Sidebar() {
   ];
 
   return (
-    <div className="w-[12%] sm:w-[120px] lg:w-[10%] xl:w-2/12 3xl:w-[15%] bg-black pr-1 xl:pr-4 overflow-auto pb-8 sidebar">{/* bg-[#212121] */}
+    <div className="w-[12%] sm:w-[120px] lg:w-[10%] xl:w-2/12 3xl:w-[15%] bg-[#0f0f0f] pr-1 xl:pr-4 overflow-auto pb-8 sidebar">{/* bg-[#212121] */}
       <ul className="flex flex-col xl:border-b-2 border-gray-700">
         {mainLinks.map(({ icon, name }) => {
           return (

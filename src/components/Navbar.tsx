@@ -9,7 +9,7 @@ import { TiMicrophone } from "react-icons/ti";
 
 function Navbar() {
   return (
-    <div className='flex justify-between items-center px-[22px] h-14 bg-black opacity-95 sticky'> {/* bg-[#212121] */}
+    <div className='flex justify-between items-center px-[22px] h-14 bg-[#0f0f0f] opacity-95 sticky'> {/* bg-[#212121] */}
         <div className='flex gap-7 items-center text-2xl mr-9'>
             <div>
                 <GiHamburgerMenu />
