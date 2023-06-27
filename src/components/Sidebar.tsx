@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import {
@@ -120,25 +121,26 @@ function Sidebar() {
   ];
 
   return (
-    <div className="w-[9.5%] xl:w-2/12 3xl:w-[15%] bg-[#212121] pr-4 overflow-auto pb-8 sidebar">
-      <ul className="flex flex-col border-b-2 border-gray-700">
+    <div className="w-[12%] sm:w-[120px] lg:w-[10%] xl:w-2/12 3xl:w-[15%] bg-black pr-1 xl:pr-4 overflow-auto pb-8 sidebar">{/* bg-[#212121] */}
+      <ul className="flex flex-col xl:border-b-2 border-gray-700">
         {mainLinks.map(({ icon, name }) => {
           return (
             <li
               key={name}
-              className={`pl-6 py-3 hover:bg-zinc-600 ${
+              // px-6
+              className={`ml-1 mr-2 rounded-lg  py-3 w-[98%] justify-center hover:bg-zinc-600 ${
                 name === "Home" ? "bg-slate-600" : ""
               }`}
             >
-              <a href="#" className="flex items-center gap-5">
+              <a href="#" className="flex flex-col xl:flex-row items-center gap-1 xl:gap-5 w-fit m-auto">
                 {icon}
-                <span className={`text-sm tracking-wider hidden xl:block`}>{name}</span>
+                <span className={`text-sm tracking-wider ${name === "Subscriptions" ? "text-xs xl:text-sm" : ""}`}>{name}</span>
               </a>
             </li>
           );
         })}
       </ul>
-      <ul className="flex flex-col border-b-2 border-gray-700">
+      <ul className="hidden xl:flex flex-col border-b-2 border-gray-700">
         {secondaryLinks.map(({ icon, name }) => {
           return (
             <li key={name} className={`pl-6 py-3 hover:bg-zinc-600 `}>
@@ -150,7 +152,7 @@ function Sidebar() {
           );
         })}
       </ul>
-      <ul className="flex flex-col border-b-2 border-gray-700">
+      <ul className="hidden xl:flex flex-col border-b-2 border-gray-700">
         {subscriptionLinks.map(({ icon, name }) => {
           return (
             <li key={name} className={`pl-6 py-3 hover:bg-zinc-600 `}>
@@ -162,7 +164,7 @@ function Sidebar() {
           );
         })}
       </ul>
-      <ul className="flex flex-col border-b-2 border-gray-700">
+      <ul className="hidden xl:flex flex-col border-b-2 border-gray-700">
         {helpLinks.map(({ icon, name }) => {
           return (
             <li key={name} className={`pl-6 py-3 hover:bg-zinc-600 `}>
@@ -184,7 +186,12 @@ function Sidebar() {
           return <li key={name}>{name}</li>;
         })}
       </ul>
-      <span className="hidden xl:flex flex-wrap 2xl:flex-nowrap  px-4 text-sm text-zinc-400">&copy; 2023 <p className="2xl:ml-2">@ Stephen Rivero</p></span>
+      <span className="hidden xl:flex flex-wrap 2xl:flex-nowrap  px-4 text-sm text-zinc-400">
+        &copy; 2023 
+        <a target="_blank" href="https://github.com/StephenRivero" className="2xl:ml-2">
+          • Stephen Rivero
+        </a>
+        </span>
       <br />
       <p className="hidden xl:flex px-4 pt-3 text-sm text-zinc-400">
         This clone is for educational purpose only.
