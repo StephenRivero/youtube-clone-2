@@ -9,8 +9,8 @@ import { TiMicrophone } from "react-icons/ti";
 
 function Navbar() {
   return (
-    <div className='flex justify-between items-center px-14 h-14 bg-[#212121] opacity-95 sticky'>
-        <div className='flex gap-8 items-center text-2xl'>
+    <div className='flex justify-between items-center px-[22px] h-14 bg-black opacity-95 sticky'> {/* bg-[#212121] */}
+        <div className='flex gap-7 items-center text-2xl mr-9'>
             <div>
                 <GiHamburgerMenu />
             </div>
@@ -21,20 +21,21 @@ function Navbar() {
                 </div>
             </Link>
         </div>
-        <div className='flex items-center justify-center gap-5'>
+        <div className='flex items-center justify-center gap-2'>
             <form action="">
-                <div className='flex bg-zinc-900 items-center h-10 px-4 pr-0'>
+                <div className='flex bg-zinc-900 items-center h-10 px-4 pr-0 rounded-full border border-gray-700'>
                     <div className='flex gap-4 items-center pr-5'>
                         <div>
                             <AiOutlineSearch className="text-xl"/>
                         </div>
                         <input 
-                            type="text" 
-                            className='w-96 bg-zinc-900 focus:outline-none border-none'
+                            type="text"
+                            placeholder='Search'
+                            className='w-[30vw] bg-zinc-900 focus:outline-none border-none'
                         />
                         <AiOutlineClose className="text-xl cursor-pointer" />
                     </div>
-                    <button className='h-10 w-16 flex items-center justify-center bg-zinc-800'>
+                    <button className='h-10 w-16 flex items-center justify-center bg-zinc-800 rounded-r-full border border-gray-700'>
                         <AiOutlineSearch className="text-xl"/>
                     </button>
                 </div>
@@ -43,7 +44,7 @@ function Navbar() {
                 <TiMicrophone />
             </div>
         </div>
-        <div className='flex gap-5 items-center text-xl'>
+        <div className='flex gap-8 items-center text-xl'>
             <BsCameraVideo/>
             {/* <IoIosKeypad/> */}
             <div className='relative'>
