@@ -1,13 +1,27 @@
 import React from 'react'
 import { GiHamburgerMenu } from "react-icons/gi";
-import {Link} from 'react-router-dom';
 import { BsYoutube, BsCameraVideo, BsBell } from "react-icons/bs";
 import { AiOutlineSearch, AiOutlineClose } from "react-icons/ai"; 
 import { TiMicrophone } from "react-icons/ti";
-// import { IoAppsSharp } from "react-icons/io";
-// import { IoIosKeypad } from "react-icons/io";
+import {Link, useLocation, useNavigate} from 'react-router-dom';
+import { useAppDispatch, useAppSelector } from '../store/hooks';
+import { changeSearchTerm, clearSearchTerm, clearVideos } from '../store';
+import { getSearchPageVideos } from '../store/reducers/getSearchPageVideos';
 
 function Navbar() {
+
+    const location = useLocation();
+    const navigate = useNavigate();
+    const dispatch = useAppDispatch();
+    const searchTerm = useAppSelector((state) => state.youtubeApp.searchTerm);
+    const handleSearch = () => {
+        if(location.pathname !== "/search") navigate("/search");
+        else {
+            dispatch(clearVideos())
+            dispatch(getSearchPageVideos(false))
+        }
+    }
+
   return (
     <div className='flex justify-between items-center px-[22px] h-14 bg-[#0f0f0f] opacity-95 sticky'> {/* bg-[#212121] */}
         <div className='flex gap-7 items-center text-2xl mr-9'>
@@ -22,7 +36,12 @@ function Navbar() {
             </Link>
         </div>
         <div className='flex items-center justify-center gap-2'>
-            <form action="">
+            <form 
+                onSubmit={(e) => {
+                    e.preventDefault();
+                    handleSearch();
+                }}
+            >
                 <div className='flex bg-zinc-900 items-center h-10 px-4 pr-0 rounded-full border border-gray-700'>
                     <div className='flex gap-4 items-center pr-5'>
                         <div>
@@ -32,8 +51,15 @@ function Navbar() {
                             type="text"
                             placeholder='Search'
                             className='w-[30vw] bg-zinc-900 focus:outline-none border-none'
+                            value={searchTerm}
+                            onChange={e=>dispatch(changeSearchTerm(e.target.value))}
                         />
-                        <AiOutlineClose className="text-xl cursor-pointer" />
+                        <AiOutlineClose 
+                            className={`text-xl cursor-pointer ${
+                                !searchTerm ? "invisible" : "visible"
+                            }`}
+                            onClick={()=>dispatch(clearSearchTerm())}
+                        />
                     </div>
                     <button className='h-10 w-16 flex items-center justify-center bg-zinc-800 rounded-r-full border border-gray-700'>
                         <AiOutlineSearch className="text-xl"/>
