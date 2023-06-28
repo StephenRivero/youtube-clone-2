@@ -5,10 +5,11 @@ import { useAppDispatch, useAppSelector } from '../store/hooks'
 import { getSearchPageVideos } from '../store/reducers/getSearchPageVideos';
 import Spinner from '../components/Spinner';
 import { HomePageVideos } from '../Types';
-import Card from '../components/Card';
+// import Card from '../components/Card';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { clearVideos } from '../store';
 import { useNavigate } from 'react-router-dom';
+import SearchCard from '../components/SearchCard';
 
 function Search() {
   const navigate = useNavigate();
@@ -42,7 +43,7 @@ function Search() {
             >
               <div className='flex flex-wrap justify-center gap-y-8 gap-x-8  p-4 w-full'>
                 {videos.map((item: HomePageVideos) => {
-                  return <Card data={item} key={item.videoId} />;
+                  return <SearchCard data={item} key={item.videoId} />;
                 })}
               </div>
             </InfiniteScroll>

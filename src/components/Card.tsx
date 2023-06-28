@@ -11,7 +11,7 @@ function Card({ data }: { data: HomePageVideos }) {
         <div className='group w-64 h-60  3xl:w-[310px] 3xl:h-[294.5px] flex gap-3 flex-col'> {/* 2xl:w-[360px] 2xl:h-[302px] */}
            
             <div className='relative'>
-                <span className='absolute bottom-3 right-3 text-sm bg-gray-900 px-2 py-0.5 z-10'>
+                <span className='absolute bottom-1 right-1 text-xs bg-black/80 px-[5px] py-[1px] z-10 rounded-[4px]'>
                     {data.videoDuration}
                 </span>
                 <Link to={`/watch/${data.videoId}`}>
