@@ -15,9 +15,8 @@ function Card({ data }: { data: HomePageVideos }) {
                     {data.videoDuration}
                 </span>
                 <Link to={`/watch/${data.videoId}`}>
-                    <img src={data.videoThumbnail} className='w-full h-full rounded-xl group-hover:rounded-none transition' alt="Thumbnail" />{/* h-44 w-72 */}
+                    <img src={data.videoThumbnail} className='w-full h-full rounded-xl group-hover:rounded-none transition duration-1000' alt="Thumbnail" />{/* h-44 w-72 */}
                 </Link>
-                
             </div>
             <div className="flex gap-2">
                 <div className="min-w-fit">

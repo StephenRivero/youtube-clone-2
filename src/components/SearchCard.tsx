@@ -14,7 +14,7 @@ function SearchCard({ data }: { data: HomePageVideos }) {
                 <Link to={`/watch/${data.videoId}`}>
                     <img 
                         src={data.videoThumbnail} 
-                        className='w-full h-full rounded-xl group-hover:rounded-none transition' 
+                        className='w-full h-full rounded-xl group-hover:rounded-none transition duration-1000' 
                         alt="Thumbnail" 
                     />
                 </Link>

@@ -25,13 +25,10 @@ function Home() {
 
   return (
     <div className='max-h-screen overflow-hidden'>
-      {/* style={{ height: "7.5vh" }}  className='h-[7.5vh]'*/}
       <div >
         <Navbar />
       </div>
-      {/* lg:mt-[10px] xl:mt-[-4px] 2xl:mt-[-12px] 3xl:mt-[-25px] */}
-      {/*  h-[92.5vh] xl:h-[92.9vh] 2xl:h-[93.8vh] 3xl:h-[94.7vh] */}
-      <div className='flex h-[calc(100vh-56px)] w-full bg-[#0f0f0f]'> {/* xl:mt-[-4px] style={{ height: "92.5vh" }} */}
+      <div className='flex h-[calc(100vh-56px)] w-full bg-[#0f0f0f]'>
         <Sidebar />
         <div className='h-[calc(100vh-56px)] w-full flex'>
           {videos.length ? (
@@ -42,7 +39,7 @@ function Home() {
               loader={<Spinner />}
               height={1024}
             >
-              <div className='flex flex-wrap justify-center gap-y-8 gap-x-8  p-4 w-full'> {/*  lg:grid lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 3xl:grid-cols-5 */}
+              <div className='flex flex-wrap justify-center gap-y-8 gap-x-8 p-4 w-full'>
                 {videos.map((item: HomePageVideos) => {
                   return <Card data={item} key={item.videoId} />;
                 })}

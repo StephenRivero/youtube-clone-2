@@ -16,14 +16,11 @@ export const getSearchPageVideos = createAsyncThunk(
     const {
       data: { items, nextPageToken },
     } = await axios.get(
-        `   ${YOUTUBE_API_URL}/search?q=${searchTerm}&key=
-            ${API_KEY}&part=snippet&type=video&${isNext ? `pageToken=${nextPageTokenFromState}` : ""}
-        `
+      `${YOUTUBE_API_URL}/search?q=${searchTerm}&key=${API_KEY}&part=snippet&type=video&${
+        isNext ? `pageToken=${nextPageTokenFromState}` : ""
+      }`
     );
-    // console.log({ items, nextPageTokenFromState, nextPageToken });
-    console.log({ items });
     const parsedData: HomePageVideos[] = await parseData(items);
-    
     return { parsedData: [...videos, ...parsedData], nextPageToken };
   }
 );
