@@ -33,7 +33,7 @@ function Home() {
       {/*  h-[92.5vh] xl:h-[92.9vh] 2xl:h-[93.8vh] 3xl:h-[94.7vh] */}
       <div className='flex h-[calc(100vh-56px)] w-full bg-[#0f0f0f]'> {/* xl:mt-[-4px] style={{ height: "92.5vh" }} */}
         <Sidebar />
-        <div className='h-[calc(100vh-56px)] w-full'>
+        <div className='h-[calc(100vh-56px)] w-full flex'>
           {videos.length ? (
             <InfiniteScroll
               dataLength={videos.length}

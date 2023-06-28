@@ -127,14 +127,14 @@ function Sidebar() {
           return (
             <li
               key={name}
-              // px-6
-              className={`ml-1 mr-2 rounded-lg  py-3 w-[98%] justify-center hover:bg-zinc-600 ${
+              // px-6 
+              className={`xl:pl-5 ml-1 mr-2 rounded-lg  py-3 w-[98%] hover:bg-zinc-600 ${
                 name === "Home" ? "bg-slate-600" : ""
               }`}
             >
-              <a href="#" className="flex flex-col xl:flex-row items-center gap-1 xl:gap-5 w-fit m-auto">
+              <a href="#" className="flex flex-col xl:flex-row items-center xl:justify-start gap-1 xl:gap-5 w-fit m-auto xl:m-0">
                 {icon}
-                <span className={`text-sm tracking-wider ${name === "Subscriptions" ? "text-xs xl:text-sm" : ""}`}>{name}</span>
+                <span className={`text-sm tracking-wider ${name === "Subscriptions" ? "text-xs my-auto" : ""}`}>{name}</span>
               </a>
             </li>
           );
@@ -143,7 +143,7 @@ function Sidebar() {
       <ul className="hidden xl:flex flex-col border-b-2 border-gray-700">
         {secondaryLinks.map(({ icon, name }) => {
           return (
-            <li key={name} className={`pl-6 py-3 hover:bg-zinc-600 `}>
+            <li key={name} className={`pl-6 py-3 hover:bg-zinc-600 rounded-lg`}>
               <a href="#" className="flex items-center gap-5">
                 {icon}
                 <span className="text-sm tracking-wider hidden xl:block">{name}</span>
@@ -155,7 +155,7 @@ function Sidebar() {
       <ul className="hidden xl:flex flex-col border-b-2 border-gray-700">
         {subscriptionLinks.map(({ icon, name }) => {
           return (
-            <li key={name} className={`pl-6 py-3 hover:bg-zinc-600 `}>
+            <li key={name} className={`pl-6 py-3 hover:bg-zinc-600 rounded-lg`}>
               <a href="#" className="flex items-center gap-5">
                 {icon}
                 <span className="text-sm tracking-wider hidden xl:block">{name}</span>
@@ -167,7 +167,7 @@ function Sidebar() {
       <ul className="hidden xl:flex flex-col border-b-2 border-gray-700">
         {helpLinks.map(({ icon, name }) => {
           return (
-            <li key={name} className={`pl-6 py-3 hover:bg-zinc-600 `}>
+            <li key={name} className={`pl-6 py-3 hover:bg-zinc-600 rounded-lg`}>
               <a href="#" className="flex items-center gap-5">
                 {icon}
                 <span className="text-sm tracking-wider hidden xl:block">{name}</span>
