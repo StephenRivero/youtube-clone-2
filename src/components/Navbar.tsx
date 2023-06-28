@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React from 'react'
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BsYoutube, BsCameraVideo, BsBell } from "react-icons/bs";
@@ -79,11 +80,13 @@ function Navbar() {
                     9+
                 </span>
             </div>
-            <img 
-                className='w-9 h-9 rounded-full'
-                src="https://avatars.githubusercontent.com/u/79730009?v=4" 
-                alt="logo" 
-            />
+            <a target="_blank" href="https://github.com/StephenRivero">
+                <img 
+                    className='w-9 h-9 rounded-full cursor-pointer'
+                    src="https://avatars.githubusercontent.com/u/79730009?v=4" 
+                    alt="logo" 
+                />
+            </a>
         </div>
     </div>
   )
