@@ -41,22 +41,22 @@ function Watch() {
     <>{
       currentPlaying && currentPlaying?.videoId === id && (
         <div className="flex flex-col">{/* max-h-screen */}
-          <div className='fixed top-0 left-0 w-full z-20 bg-[#0f0f0f]'>{/* style={{ height: "7.5vh"}} */}
+          <div className='fixed top-0 left-0 w-full z-20 bg-[#0f0f0f]'>
             <Navbar/>
           </div>
-          <div className='flex w-full h-[calc(100vh-56px)] mt-[56px]' > {/* style={{ height: "92.5vh"}} */}
-            <div className='flex gap-y-10 gap-x-5 p-7 m-auto mr-0 w-full overflow-auto'>
-              <div style={{ maxWidth: "800px"}}>
-                <div>
-                  <iframe 
-                    src={`https://www.youtube.com/embed/${id}?autoplay=1`} 
-                    width="800"
-                    height="450"
-                    allowFullScreen
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    title="Youtube video player"
-                  ></iframe>
-                  <div className="mt-5">
+          <div className='flex w-full h-[calc(100vh-56px)] mt-[56px]' >
+            <div className='flex gap-y-10 gap-x-5  m-auto w-full overflow-auto'>{/* p-5 */}
+              <div className='w-full'>
+                <iframe 
+                  className="w-full h-[75vh]"
+                  src={`https://www.youtube.com/embed/${id}?autoplay=1`} 
+                  allowFullScreen
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  title="Youtube video player"
+                ></iframe>
+                {/* Video Details */}
+                <div className='flex justify-center gap-6 w-full max-w-[90%] mx-auto px-5 pb-5 2xl:px-0'>
+                  <div className="mt-4 w-full">
                     <p className="text-xl">{currentPlaying.videoTitle}</p>
                     <div className="flex justify-between mt-1">
                       <div className="text-sm text-gray-400">
@@ -138,13 +138,18 @@ function Watch() {
                       </div>
                     </div>
                   </div>
+                  <div className="flex flex-col gap-3 mt-4">
+                    {getRecommendedVideos.length && recommendedVideos.map((item) => {
+                      return <WatchCard data={item} key={item.videoId} />;
+                    })}
+                  </div>
                 </div>
               </div>
-              <div className="mr-24 flex flex-col gap-3">
+              {/* <div className="mr-24 flex flex-col gap-3">
                 {getRecommendedVideos.length && recommendedVideos.map((item) => {
                   return <WatchCard data={item} key={item.videoId} />;
                 })}
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
