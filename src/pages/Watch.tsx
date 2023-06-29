@@ -10,6 +10,7 @@ import { MdOutlinePlaylistAdd } from "react-icons/md";
 import { FaShare } from "react-icons/fa";
 import { BsThreeDots } from "react-icons/bs";
 import WatchCard from '../components/WatchCard';
+import Spinner from '../components/Spinner';
 
 function Watch() {
 
@@ -39,7 +40,7 @@ function Watch() {
 
   return (
     <>{
-      currentPlaying && currentPlaying?.videoId === id && (
+      currentPlaying && currentPlaying?.videoId === id ? (
         <div className="flex flex-col">{/* max-h-screen */}
           <div className='fixed top-0 left-0 w-full z-20 bg-[#0f0f0f]'>
             <Navbar/>
@@ -153,7 +154,7 @@ function Watch() {
             </div>
           </div>
         </div>
-      )
+      ) : <div className='h-[calc(100vh-56px)] w-full flex'><Spinner /></div>
     }</>
   )
 }
