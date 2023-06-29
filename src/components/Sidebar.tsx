@@ -121,15 +121,14 @@ function Sidebar() {
   ];
 
   return (
-    <div className="w-[12%] sm:w-[120px] lg:w-[10%] xl:w-2/12 3xl:w-[15%] bg-[#0f0f0f] pr-1 xl:pr-4 overflow-auto pb-8 sidebar">{/* bg-[#212121] */}
-      <ul className="flex flex-col xl:border-b-2 border-gray-700">
+    <div className="h-[68px] w-[12%] sm:w-full lg:w-[10%] xl:w-2/12 3xl:w-[15%] bg-[#0f0f0f] lg:pr-1 xl:pr-4 lg:overflow-auto lg:pb-8 sidebar z-20">{/* bg-[#212121] */}
+      <ul className="flex flex-row lg:flex-col xl:border-b-2 xl:border-gray-700 border border-r-transparent border-l-transparent border-t-gray-700 lg:border-t-transparent">
         {mainLinks.map(({ icon, name }) => {
           return (
             <li
               key={name}
-              // px-6 
-              className={`xl:pl-5 ml-1 mr-2 rounded-lg  py-3 w-[98%] hover:bg-zinc-600 ${
-                name === "Home" ? "bg-slate-600" : ""
+              className={`xl:pl-5 ml-1 mr-2 rounded-lg py-3 w-[98%] lg:hover:bg-zinc-600 ${
+                name === "Home" ? "lg:bg-slate-600" : ""
               }`}
             >
               <a href="#" className="flex flex-col xl:flex-row items-center xl:justify-start gap-1 xl:gap-5 w-fit m-auto xl:m-0">

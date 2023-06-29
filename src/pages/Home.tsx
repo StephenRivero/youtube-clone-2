@@ -28,9 +28,9 @@ function Home() {
       <div >
         <Navbar />
       </div>
-      <div className='flex h-[calc(100vh-56px)] w-full bg-[#0f0f0f]'>
+      <div className='flex flex-col-reverse lg:flex-row h-[calc(100vh-56px)] w-full bg-[#0f0f0f] overflow-hidden'>
         <Sidebar />
-        <div className='h-[calc(100vh-56px)] w-full flex'>
+        <div className='h-[calc(100vh-124px)] lg:h-[calc(100vh-56px)] w-full flex pt-[10px] lg:mt-0'>
           {videos.length ? (
             <InfiniteScroll
               dataLength={videos.length}
@@ -39,7 +39,7 @@ function Home() {
               loader={<Spinner />}
               height={1024}
             >
-              <div className='flex flex-wrap justify-center gap-y-8 gap-x-8 p-4 w-full'>
+              <div className='flex flex-wrap justify-center gap-y-8 gap-x-8 w-full lg:pt-0'>{/* p-4 */}
                 {videos.map((item: HomePageVideos) => {
                   return <Card data={item} key={item.videoId} />;
                 })}

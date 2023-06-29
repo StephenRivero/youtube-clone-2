@@ -59,14 +59,14 @@ function Watch() {
                 <div className='flex justify-center gap-6 w-full max-w-[90%] mx-auto px-5 pb-5 2xl:px-0'>
                   <div className="mt-4 w-full">
                     <p className="text-xl">{currentPlaying.videoTitle}</p>
-                    <div className="flex justify-between mt-1">
+                    <div className="flex flex-col xl:flex-row justify-between mt-1">
                       <div className="text-sm text-gray-400">
                         <span className="after:content-['•'] after:mx-1">
                           {currentPlaying.videoViews} views
                         </span>
                         <span> {currentPlaying.videoAge} ago</span>
                       </div>
-                      <div className="flex items-center gap-4 uppercase">
+                      <div className="flex items-center gap-4 uppercase mt-1 xl:mt-0">
                         <div className="flex items-center gap-1 cursor-pointer">
                           <BiLike className="text-xl" />
                           <strong>{currentPlaying.videoLikes}</strong>
