@@ -41,7 +41,7 @@ function Search() {
               loader={<Spinner />}
               height={1024}
             >
-              <div className='flex flex-wrap justify-center gap-y-8 gap-x-8  p-4 w-full'>
+              <div className='flex flex-wrap justify-start gap-y-8 gap-x-8 p-4 w-full'>
                 {videos.map((item: HomePageVideos) => {
                   return <SearchCard data={item} key={item.videoId} />;
                 })}
