@@ -24,34 +24,35 @@ function Navbar() {
     }
 
   return (
-    <div className='flex justify-between items-center px-[22px] h-14 bg-[#0f0f0f] opacity-95 sticky'> {/* bg-[#212121] */}
-        <div className='flex gap-7 items-center text-2xl mr-9'>
-            <div>
-                <GiHamburgerMenu />
-            </div>
+    <div className='flex justify-between items-center px-3 sm:px-[22px] h-14 bg-[#0f0f0f] opacity-95 sticky'> {/* bg-[#212121] */}
+        <div className='flex gap-7 items-center text-2xl lg:mr-9'>
+            <GiHamburgerMenu className='hidden lg:block' />
             <Link to="/">
                 <div className="flex gap-1 items-center justify-center">
                     <BsYoutube className="text-3xl text-red-600" />
-                    <span className='text-xl font-medium'>YouTube</span>
+                    <span className='text-xl font-medium hidden sm:block'>
+                        YouTube
+                    </span>
                 </div>
             </Link>
         </div>
-        <div className='flex items-center justify-center gap-2'>
+        <div className='flex items-center justify-center gap-2 w-full max-w-[60vw] sm:max-w-[60vw] md:max-w-[65vw] lg:w-[50vw] mx-2'>
             <form 
                 onSubmit={(e) => {
                     e.preventDefault();
                     handleSearch();
                 }}
+                className='w-full'
             >
-                <div className='flex bg-zinc-900 items-center h-10 px-4 pr-0 rounded-full border border-gray-700'>
-                    <div className='flex gap-4 items-center pr-5'>
-                        <div>
+                <div className='flex bg-zinc-900 items-center h-10 px-4 pr-0 rounded-full border border-gray-700 w-full'>
+                    <div className='flex gap-4 items-center pr-5 w-full'>
+                        <div className="hidden sm:block">
                             <AiOutlineSearch className="text-xl"/>
                         </div>
                         <input 
                             type="text"
                             placeholder='Search'
-                            className='w-[30vw] bg-zinc-900 focus:outline-none border-none'
+                            className='w-full max-w-full bg-zinc-900 focus:outline-none border-none'
                             value={searchTerm}
                             onChange={e=>dispatch(changeSearchTerm(e.target.value))}
                         />
@@ -67,14 +68,14 @@ function Navbar() {
                     </button>
                 </div>
             </form>
-            <div className="text-xl p-3 bg-zinc-900 rounded-full">
+            <div className="hidden lg:block text-xl p-3 bg-zinc-900 rounded-full">
                 <TiMicrophone />
             </div>
         </div>
         <div className='flex gap-8 items-center text-xl'>
-            <BsCameraVideo/>
+            <BsCameraVideo className='hidden lg:block'/>
             {/* <IoIosKeypad/> */}
-            <div className='relative'>
+            <div className='relative hidden lg:block'>
                 <BsBell/>
                 <span className='absolute bottom-2 left-2 text-xs bg-red-600 rounded-full px-1'>
                     9+

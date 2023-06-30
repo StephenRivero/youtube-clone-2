@@ -121,8 +121,8 @@ function Sidebar() {
   ];
 
   return (
-    <div className="h-[68px] w-[12%] sm:w-full lg:w-[10%] xl:w-2/12 3xl:w-[15%] bg-[#0f0f0f] lg:pr-1 xl:pr-4 lg:overflow-auto lg:pb-8 sidebar z-20">{/* bg-[#212121] */}
-      <ul className="flex flex-row lg:flex-col xl:border-b-2 xl:border-gray-700 border border-r-transparent border-l-transparent border-t-gray-700 lg:border-t-transparent">
+    <div className="h-[68px] lg:h-fit w-full lg:w-[10%] xl:w-2/12 3xl:w-[15%] bg-[#0f0f0f] lg:pr-1 xl:pr-4 lg:overflow-auto lg:pb-8 sidebar z-20">{/* bg-[#212121] */}
+      <ul className="flex flex-row lg:flex-col xl:border-b-2 xl:border-gray-700 xl:border border-r-transparent border-l-transparent border-t-gray-700 lg:border-t-transparent">
         {mainLinks.map(({ icon, name }) => {
           return (
             <li
@@ -133,7 +133,7 @@ function Sidebar() {
             >
               <a href="#" className="flex flex-col xl:flex-row items-center xl:justify-start gap-1 xl:gap-5 w-fit m-auto xl:m-0">
                 {icon}
-                <span className={`text-sm tracking-wider ${name === "Subscriptions" ? "text-xs my-auto" : ""}`}>{name}</span>
+                <span className={`text-xs pt-[2px] sm:pt-0 sm:text-sm tracking-wider ${name === "Subscriptions" ? "text-xs my-auto pt-[2px] sm:pt-0" : ""}`}>{name}</span>
               </a>
             </li>
           );

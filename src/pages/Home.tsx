@@ -39,7 +39,7 @@ function Home() {
               loader={<Spinner />}
               height={1024}
             >
-              <div className='flex flex-wrap justify-center gap-y-8 gap-x-8 w-full lg:pt-0'>{/* p-4 */}
+              <div className='flex flex-wrap justify-center gap-y-4 sm:gap-y-8 gap-x-8 w-full lg:pt-0'>{/* p-4 */}
                 {videos.map((item: HomePageVideos) => {
                   return <Card data={item} key={item.videoId} />;
                 })}
