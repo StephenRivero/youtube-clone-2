@@ -8,7 +8,7 @@ function Card({ data }: { data: HomePageVideos }) {
     // const isData = data ? true : false;
     
     return (
-        <div className='group w-full sm:w-64 sm:h-60  3xl:w-[310px] 3xl:h-[294.5px] flex gap-3 flex-col'> {/* 2xl:w-[360px] 2xl:h-[302px] */}
+        <div className='group w-full sm:w-64 sm:h-60 3xl:w-[310px] 3xl:h-[294.5px] flex gap-3 flex-col'> {/* 2xl:w-[360px] 2xl:h-[302px] */}
            
             <div className='relative'>
                 <span className='absolute bottom-1 right-1 text-xs bg-black/80 px-[5px] py-[1px] z-10 rounded-[4px]'>
@@ -34,7 +34,7 @@ function Card({ data }: { data: HomePageVideos }) {
                             {data.videoTitle}
                         </a>
                     </h3>
-                    <div className="flex sm:block text-sm text-gray-400">
+                    <div className="flex flex-wrap sm:block text-sm text-gray-400">
                         <div>
                             <a href="#" className="hover:text-white after:content-['●'] sm:after:content-none after:mx-1 sm:after:mx-0">
                                 {data.channelInfo.name}
