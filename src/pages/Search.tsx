@@ -30,9 +30,9 @@ function Search() {
       <div >
         <Navbar />
       </div>
-      <div className='flex h-[calc(100vh-56px)] w-full bg-[#0f0f0f]'>
+      <div className='flex flex-col-reverse lg:flex-row h-[calc(100vh-56px)] w-full bg-[#0f0f0f]'>
         <Sidebar />
-        <div className='h-[calc(100vh-56px)] w-full flex'>
+        <div className='md:h-[calc(100vh-106px)] lg:h-[calc(100vh-56px)] w-full flex'>
           {videos.length ? (
             <InfiniteScroll
               dataLength={videos.length}
