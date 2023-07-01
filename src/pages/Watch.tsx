@@ -56,8 +56,8 @@ function Watch() {
                   title="Youtube video player"
                 ></iframe>
                 {/* Video Details */}
-                <div className='flex flex-col md:flex-row justify-center md:gap-6 w-full lg:max-w-[90%] mx-auto px-4 sm:px-5 pb-5 2xl:px-0'>
-                  <div className="mt-4 ">{/* w-fit */}
+                <div className='flex flex-col md:flex-row justify-center md:gap-6 w-full lg:max-w-[90%] mx-auto pb-5 2xl:px-0'>
+                  <div className="mt-4 px-4 sm:px-5">{/* w-fit */}
                     <p className="text-xl">{currentPlaying.videoTitle}</p>
                     <div className="flex flex-col xl:flex-row justify-between mt-1">
                       <div className="text-sm text-gray-400">

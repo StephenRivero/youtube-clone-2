@@ -6,28 +6,28 @@ import { Link } from 'react-router-dom'
 function WatchCard({ data }: { data: RecommendedVideos }) {
     
     return (
-        <div className="group flex gap-3 md:w-[38vw] lg:w-fit">
+        <div className="group flex flex-col sm:flex-row gap-3 md:w-[38vw] lg:w-fit">
             <div className='relative'>
                 <span className='absolute bottom-1 right-1 text-xs bg-black/80 px-[5px] py-[1px] z-10 rounded-[4px]'>
                     {data.videoDuration}
                 </span>
-                <div className='h-24 w-40'>
+                <div className='sm:h-24 sm:w-40'>
                     <Link to={`/watch/${data.videoId}`}>
                         <img 
                             src={data.videoThumbnail} 
-                            className='w-full h-full rounded-xl group-hover:rounded-none transition duration-1000' 
+                            className='w-full h-full sm:rounded-xl group-hover:rounded-none transition duration-1000' 
                             alt="Thumbnail" 
                         />
                     </Link>
                 </div>
             </div>
-            <div className="flex flex-col gap-1 w-full md:w-[202px]">
+            <div className="flex flex-col gap-1 w-full px-4 sm:px-0 md:w-[202px]">
                 <h4 className='text-sm'>
                     <a href="#" className='line-clamp-2'>
                         {data.videoTitle}
                     </a>
                 </h4>
-                <div className='text-xs text-gray-400'>
+                <div className='flex sm:flex-col text-xs text-gray-400'>
                     <div>
                         <a href="#" className='hover:text-white'>
                             {data.channelInfo.name}
@@ -35,10 +35,10 @@ function WatchCard({ data }: { data: RecommendedVideos }) {
                     </div>
                     <div>
                         <div>
-                            <span className="after:content-['●'] after:mx-1">
+                            <span className="before:content-['●'] before:mx-2">
                                 {data.videoViews} views
                             </span>
-                            <span>
+                            <span className="before:content-['●'] before:mx-2">
                                 {data.videoAge}
                             </span>
                         </div>
