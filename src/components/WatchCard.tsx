@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom'
 function WatchCard({ data }: { data: RecommendedVideos }) {
     
     return (
-        <div className="group flex gap-3">
+        <div className="group flex gap-3 md:w-[38vw] lg:w-fit">
             <div className='relative'>
-                <span className='absolute bottom-3 right-3 text-xs bg-black/80 px-[5px] py-[1px] z-10 rounded-[4px]'>
+                <span className='absolute bottom-1 right-1 text-xs bg-black/80 px-[5px] py-[1px] z-10 rounded-[4px]'>
                     {data.videoDuration}
                 </span>
                 <div className='h-24 w-40'>
@@ -21,7 +21,7 @@ function WatchCard({ data }: { data: RecommendedVideos }) {
                     </Link>
                 </div>
             </div>
-            <div className="flex gap-1 flex-col w-[202px]">
+            <div className="flex flex-col gap-1 w-full md:w-[202px]">
                 <h4 className='text-sm'>
                     <a href="#" className='line-clamp-2'>
                         {data.videoTitle}
@@ -44,19 +44,6 @@ function WatchCard({ data }: { data: RecommendedVideos }) {
                         </div>
                     </div>
                 </div>
-                {/* <div className="min-w-fit my-2">
-                    <a href="" className='flex items-center gap-2 text-xs text-gray-400'>
-                        <img 
-                            src={data.channelInfo.image} 
-                            alt="" 
-                            className='h-9 w-9 rounded-full'
-                        />
-                        <span>{data.channelInfo.name}</span>
-                    </a>
-                </div>
-                <div className="max-w-2xl line-clamp-2 text-sm text-gray-400">
-                    <p>{data.videoDescription}</p>
-                </div> */}
             </div>
         </div>
     )

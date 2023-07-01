@@ -187,7 +187,7 @@ function Sidebar() {
       </ul>
       <span className="hidden xl:flex flex-wrap   pl-4 text-sm text-zinc-400">{/* 2xl:flex-nowrap */}
         &copy; 2023 
-        <a target="_blank" href="https://github.com/StephenRivero" className="2xl:ml-2 before:content-['•'] before:m-1">{/*  2xl:flex-nowrap */}
+        <a target="_blank" href="https://github.com/StephenRivero" className=" before:content-['•'] before:m-2">{/* 2xl:ml-2  2xl:flex-nowrap */}
            Stephen Rivero
         </a>
         </span>

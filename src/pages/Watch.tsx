@@ -49,15 +49,15 @@ function Watch() {
             <div className='flex gap-y-10 gap-x-5  m-auto w-full overflow-auto'>{/* p-5 */}
               <div className='w-full'>
                 <iframe 
-                  className="w-full h-[75vh]"
+                  className="w-full h-[32vh] sm:h-[75vh]"
                   src={`https://www.youtube.com/embed/${id}?autoplay=1`} 
                   allowFullScreen
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   title="Youtube video player"
                 ></iframe>
                 {/* Video Details */}
-                <div className='flex justify-center gap-6 w-full max-w-[90%] mx-auto px-5 pb-5 2xl:px-0'>
-                  <div className="mt-4 w-full">
+                <div className='flex flex-col md:flex-row justify-center md:gap-6 w-full lg:max-w-[90%] mx-auto px-4 sm:px-5 pb-5 2xl:px-0'>
+                  <div className="mt-4 ">{/* w-fit */}
                     <p className="text-xl">{currentPlaying.videoTitle}</p>
                     <div className="flex flex-col xl:flex-row justify-between mt-1">
                       <div className="text-sm text-gray-400">
@@ -66,7 +66,7 @@ function Watch() {
                         </span>
                         <span> {currentPlaying.videoAge} ago</span>
                       </div>
-                      <div className="flex items-center gap-4 uppercase mt-1 xl:mt-0">
+                      <div className="flex items-center gap-4 uppercase mt-1 xl:mt-0 overflow-auto scrollbar-hide">
                         <div className="flex items-center gap-1 cursor-pointer">
                           <BiLike className="text-xl" />
                           <strong>{currentPlaying.videoLikes}</strong>
@@ -93,7 +93,7 @@ function Watch() {
                       </div>
                     </div>
                     <div className="flex gap-4 flex-col border-solid border-gray-400 border-2 my-5 pb-3 border-l-transparent border-r-transparent">
-                      <div className="flex items-center gap-5 mr-5 mt-4">
+                      <div className="flex items-center gap-5  mt-4">{/* mr-5 */}
                         <div>
                           <img
                             src={currentPlaying.channelInfo.image}
@@ -101,7 +101,7 @@ function Watch() {
                             className="rounded-full h-12 w-12"
                           />
                         </div>
-                        <div className="w-5/6">
+                        <div className="w-fit">
                           <h5 className="text-sm">
                             <strong>{currentPlaying.channelInfo.name}</strong>
                           </h5>
@@ -109,7 +109,7 @@ function Watch() {
                             {currentPlaying.channelInfo.subscribers} subscribers
                           </h6>
                         </div>
-                        <div>
+                        <div className='ml-auto'>
                           <button className="uppercase bg-red-600 rounded-sm p-2 text-sm tracking-wider">
                             subscribe
                           </button>
@@ -139,6 +139,7 @@ function Watch() {
                       </div>
                     </div>
                   </div>
+                  {/* Recommended Videos  */}
                   <div className="flex flex-col gap-3 mt-4">
                     {getRecommendedVideos.length && recommendedVideos.map((item) => {
                       return <WatchCard data={item} key={item.videoId} />;
