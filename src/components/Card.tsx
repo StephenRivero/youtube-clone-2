@@ -8,7 +8,7 @@ function Card({ data }: { data: HomePageVideos }) {
     // const isData = data ? true : false;
     
     return (
-        <div className='group w-full sm:w-64 sm:h-60 3xl:w-[310px] 3xl:h-[294.5px] flex gap-3 flex-col'> {/* 2xl:w-[360px] 2xl:h-[302px] */}
+        <div className='group w-full sm:w-64 sm:h-60 3xl:w-[310px] 3xl:h-[294.5px] flex gap-2 sm:gap-3 flex-col'> {/* 2xl:w-[360px] 2xl:h-[302px] */}
            
             <div className='relative'>
                 <span className='absolute bottom-1 right-1 text-xs bg-black/80 px-[5px] py-[1px] z-10 rounded-[4px]'>
@@ -24,7 +24,7 @@ function Card({ data }: { data: HomePageVideos }) {
                         <img 
                             src={data.channelInfo.image}
                             alt="channel"
-                            className='h-9 w-9 rounded-full' 
+                            className='h-9 w-9 rounded-full mt-[5px]' 
                         />
                     </a>
                 </div>

@@ -23,6 +23,9 @@ module.exports = {
       // => @media (min-width: 1920px) { ... }
     }
   },
-  plugins: [require("@tailwindcss/line-clamp")],
+  plugins: [
+    require("@tailwindcss/line-clamp"),
+    require("tailwind-scrollbar-hide")
+  ],
 }
 
