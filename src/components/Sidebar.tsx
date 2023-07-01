@@ -121,13 +121,13 @@ function Sidebar() {
   ];
 
   return (
-    <div className="h-[52px] lg:h-fit xl:h-full w-full lg:w-[11%] xl:w-2/12 3xl:w-[15%] bg-[#0f0f0f] lg:pr-1 xl:pr-4 xl:overflow-auto lg:pb-8 sidebar z-20">{/* bg-[#212121] */}
+    <div className="h-[52px] lg:h-fit xl:h-full w-full lg:w-[10%] xl:w-2/12 3xl:w-[12%] bg-[#0f0f0f] lg:pr-1 xl:pr-4 xl:overflow-auto lg:pb-8 sidebar z-20">{/* bg-[#212121] */}
       <ul className="flex flex-row lg:flex-col xl:border-b-2 xl:border-gray-700 border border-b-transparent border-r-transparent xl:border-r-0 border-l-transparent border-t-gray-700 lg:border-t-transparent">
         {mainLinks.map(({ icon, name }) => {
           return (
             <li
               key={name}
-              className={`xl:pl-5 ml-1 mr-2 rounded-lg pt-[6px] sm:pt-0 lg:py-3 w-[98%] lg:hover:bg-zinc-600 ${
+              className={`xl:pl-5 ml-1 mr-2 rounded-lg pt-[6px] lg:py-3 w-[98%] lg:hover:bg-zinc-600 ${
                 name === "Home" ? "lg:bg-slate-600" : ""
               }`}
             >
@@ -185,10 +185,10 @@ function Sidebar() {
           return <li key={name}>{name}</li>;
         })}
       </ul>
-      <span className="hidden xl:flex flex-wrap 2xl:flex-nowrap  px-4 text-sm text-zinc-400">
+      <span className="hidden xl:flex flex-wrap   pl-4 text-sm text-zinc-400">{/* 2xl:flex-nowrap */}
         &copy; 2023 
-        <a target="_blank" href="https://github.com/StephenRivero" className="2xl:ml-2">
-          • Stephen Rivero
+        <a target="_blank" href="https://github.com/StephenRivero" className="2xl:ml-2 before:content-['•'] before:m-1">{/*  2xl:flex-nowrap */}
+           Stephen Rivero
         </a>
         </span>
       <br />
