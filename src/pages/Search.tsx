@@ -41,10 +41,12 @@ function Search() {
               loader={<Spinner />}
               height={1024}
             >
-              <div className='flex flex-wrap justify-start gap-y-8 gap-x-8 p-4 w-full'>
-                {videos.map((item: HomePageVideos) => {
-                  return <SearchCard data={item} key={item.videoId} />;
-                })}
+              <div className='flex flex-wrap justify-start gap-y-8 gap-x-8 p-4 w-full 2xl:pl-[160px] 3xl:pl-[320px]'>
+                
+                  {videos.map((item: HomePageVideos) => {
+                    return <SearchCard data={item} key={item.videoId} />;
+                  })}
+               
               </div>
             </InfiniteScroll>
           ):  <Spinner />}
