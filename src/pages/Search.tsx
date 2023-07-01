@@ -30,9 +30,9 @@ function Search() {
       <div >
         <Navbar />
       </div>
-      <div className='flex flex-col-reverse lg:flex-row h-[calc(100vh-56px)] w-full bg-[#0f0f0f]'>
+      <div className='flex flex-col-reverse lg:flex-row h-[calc(100vh-56px)] w-full bg-[#0f0f0f] overflow-hidden'>
         <Sidebar />
-        <div className='md:h-[calc(100vh-106px)] lg:h-[calc(100vh-56px)] w-full flex'>
+        <div className='h-[calc(100vh-108px)] lg:h-[calc(100vh-56px)] w-full flex'>
           {videos.length ? (
             <InfiniteScroll
               dataLength={videos.length}
@@ -41,12 +41,10 @@ function Search() {
               loader={<Spinner />}
               height={1024}
             >
-              <div className='flex flex-wrap justify-start gap-y-8 gap-x-8 p-4 w-full 2xl:pl-[160px] 3xl:pl-[320px]'>
-                
-                  {videos.map((item: HomePageVideos) => {
-                    return <SearchCard data={item} key={item.videoId} />;
-                  })}
-               
+              <div className='flex flex-wrap justify-start gap-y-3 lg:gap-y-8 gap-x-4 lg:gap-x-8 p-4 w-full 2xl:pl-[160px] 3xl:pl-[320px]'>
+                {videos.map((item: HomePageVideos) => {
+                  return <SearchCard data={item} key={item.videoId} />;
+                })}
               </div>
             </InfiniteScroll>
           ):  <Spinner />}
