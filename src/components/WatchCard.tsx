@@ -27,21 +27,19 @@ function WatchCard({ data }: { data: RecommendedVideos }) {
                         {data.videoTitle}
                     </a>
                 </h4>
-                <div className='flex sm:flex-col text-xs text-gray-400'>
+                <div className='flex md:flex-col text-xs text-gray-400'>
                     <div>
                         <a href="#" className='hover:text-white'>
                             {data.channelInfo.name}
                         </a>
                     </div>
-                    <div>
-                        <div>
-                            <span className="before:content-['●'] before:mx-2">
-                                {data.videoViews} views
-                            </span>
-                            <span className="before:content-['●'] before:mx-2">
-                                {data.videoAge}
-                            </span>
-                        </div>
+                    <div className='flex flex-wrap'>
+                        <span className="before:content-['●'] before:mx-1 lg:before:mx-2">
+                            {data.videoViews} views
+                        </span>
+                        {/* <span className="before:content-['●'] before:mx-1 lg:before:mx-2">
+                            {data.videoAge}
+                        </span> */}
                     </div>
                 </div>
             </div>
