@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 function SearchCard({ data }: { data: HomePageVideos }) {
     
     return (
-        <div className="group flex w-full sm:flex-row md:flex-col lg:flex-row gap-3 ">
+        <div className="group w-full flex flex-col sm:flex-row md:flex-col lg:flex-row gap-3 ">
             <div className='relative'>
                 <span className='absolute bottom-1 right-1 text-xs bg-black/80 px-[5px] py-[1px] z-10 rounded-[4px]'>
                     {data.videoDuration}
@@ -14,7 +14,7 @@ function SearchCard({ data }: { data: HomePageVideos }) {
                 <Link to={`/watch/${data.videoId}`}>
                     <img 
                         src={data.videoThumbnail} 
-                        className='sm:w-[200px] md:w-[100vw] lg:w-[360px] rounded-xl group-hover:rounded-none transition duration-1000' 
+                        className='w-[100vw] sm:w-[200px] md:w-[100vw] lg:w-[360px] sm:rounded-xl group-hover:rounded-none transition duration-1000' 
                         alt="Thumbnail" 
                     />
                 </Link>
@@ -60,7 +60,7 @@ function SearchCard({ data }: { data: HomePageVideos }) {
             {/* Video Details starting width 640px to before 1024px */}
             <div className="flex sm:w-[60vw] md:w-full sm:flex-col-reverse sm:justify-end md:justify-start md:flex-row lg:hidden sm:gap-1 md:gap-[12px]">
                 <div className="min-w-fit md:mt-[3px]">
-                    <a href="" className='flex items-center gap-2 text-xs text-gray-400'>
+                    <a href="" className='flex items-center gap-2 text-xs text-gray-400 px-2 pt-1 sm:pl-0 sm:pt-0'>
                         <img 
                             src={data.channelInfo.image} 
                             alt="" 
@@ -71,11 +71,11 @@ function SearchCard({ data }: { data: HomePageVideos }) {
                 <div className='flex w-full justify-between'>
                     <div className='flex flex-col'>
                         <h3 className='sm:max-w-[350px] lg:max-w-[500px] xl:max-w-[664px]'>{/*w-full */}
-                            <a href="#" className='sm:line-clamp-2 md:line-clamp-1 lg:line-clamp-2  '>
+                            <a href="#" className='line-clamp-2 md:line-clamp-1 lg:line-clamp-2  '>
                                 {data.videoTitle}
                             </a>
                         </h3>
-                        <div className='flex text-xs text-gray-400 sm:mt-[3px] md:mt-0'>
+                        <div className='flex flex-wrap text-xs text-gray-400 sm:mt-[3px] md:mt-0'>
                             <span className="after:content-['●'] after:mx-2 ">
                                 {data.channelInfo.name}
                             </span>
