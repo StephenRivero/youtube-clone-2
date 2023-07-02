@@ -23,12 +23,16 @@ function Navbar() {
         }
     }
 
+    // function refreshPage() {
+    //     window.location.reload(false);
+    // }
+
   return (
     <div className='flex justify-between items-center px-4 sm:px-[22px] h-14 bg-[#0f0f0f] opacity-95 sticky'> {/* bg-[#212121] */}
         <div className='flex gap-7 items-center text-2xl lg:mr-9'>
             <GiHamburgerMenu className='hidden lg:block' />
             <Link to="/">
-                <div className="flex gap-1 items-center justify-center">
+                <div onClick={() => window.location.reload()} className="flex gap-1 items-center justify-center">
                     <BsYoutube className="text-3xl text-red-600" />
                     <span className='text-xl font-medium hidden sm:block'>
                         YouTube
