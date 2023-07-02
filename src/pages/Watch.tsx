@@ -45,18 +45,18 @@ function Watch() {
           <div className='fixed top-0 left-0 w-full z-20 bg-[#0f0f0f]'>
             <Navbar/>
           </div>
-          <div className='flex w-full h-[calc(100vh-56px)] mt-[56px]' >
+          <div className='flex w-full h-[calc(100vh-56px)] mt-[56px] relative' >
             <div className='flex gap-y-10 gap-x-5  m-auto w-full overflow-auto'>{/* p-5 */}
               <div className='w-full'>
                 <iframe 
-                  className="w-full h-[32vh] sm:h-[75vh]"
+                  className="w-full h-[32vh] sm:h-[75vh] fixed top-[56px] left-0 sm:static md:fixed lg:static z-30"
                   src={`https://www.youtube.com/embed/${id}?autoplay=1`} 
                   allowFullScreen
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   title="Youtube video player"
                 ></iframe>
                 {/* Video Details */}
-                <div className='flex flex-col md:flex-row justify-center md:gap-6 w-full lg:max-w-[90%] mx-auto pb-5 2xl:px-0'>
+                <div className='flex flex-col mt-[181.75px] sm:mt-0 md:flex-row justify-center md:gap-6 w-full lg:max-w-[90%] mx-auto pb-5 2xl:px-0'>
                   <div className="mt-4 px-4 sm:px-5">{/* w-fit */}
                     <p className="text-xl">{currentPlaying.videoTitle}</p>
                     <div className="flex flex-col xl:flex-row justify-between mt-1">
@@ -93,25 +93,28 @@ function Watch() {
                       </div>
                     </div>
                     <div className="flex gap-4 flex-col border-solid border-gray-400 border-2 my-5 pb-3 border-l-transparent border-r-transparent">
-                      <div className="flex items-center gap-5  mt-4">{/* mr-5 */}
+                      <div className="flex items-center gap-3 md:gap-5  mt-4">{/* mr-5 */}
                         <div>
                           <img
                             src={currentPlaying.channelInfo.image}
                             alt=""
-                            className="rounded-full h-12 w-12"
+                            className="rounded-full w-[34px] sm:h-12 sm:w-12"
                           />
                         </div>
                         <div className="w-fit">
-                          <h5 className="text-sm">
+                          <h5 className="text-sm line-clamp-1 md:line-clamp-none">
                             <strong>{currentPlaying.channelInfo.name}</strong>
                           </h5>
                           <h6 className="text-gray-400 text-xs">
-                            {currentPlaying.channelInfo.subscribers} subscribers
+                            {currentPlaying.channelInfo.subscribers}
+                            <span className='hidden md:block'>
+                              subscribers
+                            </span> 
                           </h6>
                         </div>
                         <div className='ml-auto'>
-                          <button className="uppercase bg-red-600 rounded-sm p-2 text-sm tracking-wider">
-                            subscribe
+                          <button className=" bg-white text-black rounded-full py-2 px-4 text-sm tracking-wider font-[500]">
+                            Subscribe
                           </button>
                         </div>
                       </div>
