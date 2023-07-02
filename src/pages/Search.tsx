@@ -39,7 +39,7 @@ function Search() {
               next={() => dispatch(getSearchPageVideos(true))}
               hasMore={videos.length < 500}
               loader={<Spinner />}
-              height={1024}
+              height={1180}
             >
               <div className='flex flex-wrap justify-start gap-y-3 lg:gap-y-8 gap-x-4 lg:gap-x-8 sm:p-3 md:p-4 w-full 2xl:pl-[160px] 3xl:pl-[320px]'>
                 {videos.map((item: HomePageVideos) => {
