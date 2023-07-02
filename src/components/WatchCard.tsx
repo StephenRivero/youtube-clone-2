@@ -27,7 +27,7 @@ function WatchCard({ data }: { data: RecommendedVideos }) {
                         {data.videoTitle}
                     </a>
                 </h4>
-                <div className='flex md:flex-col text-xs text-gray-400'>
+                <div className='flex md:flex-col lg:flex-row text-xs text-gray-400'>
                     <div>
                         <a href="#" className='hover:text-white'>
                             {data.channelInfo.name}

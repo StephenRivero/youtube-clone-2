@@ -49,16 +49,16 @@ function Watch() {
             <div className='flex gap-y-10 gap-x-5  m-auto w-full overflow-auto'>{/* p-5 */}
               <div className='w-full'>
                 <iframe 
-                  className="w-full h-[32vh] sm:h-[75vh] md:h-[42vh] fixed top-[56px] left-0 sm:static md:fixed lg:static z-30"
+                  className="w-full h-[32vh] sm:h-[75vh] md:h-[42vh] lg:h-[75vh] fixed top-[56px] left-0 sm:static md:fixed lg:static z-30"
                   src={`https://www.youtube.com/embed/${id}?autoplay=1`} 
                   allowFullScreen
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   title="Youtube video player"
                 ></iframe>
                 {/* Video Details container*/}
-                <div className='flex flex-col mt-[181.75px] sm:mt-0 md:mt-[42vh] md:flex-row justify-center md:gap-6 w-full md:max-w-[90%] lg:max-w-[90%] mx-auto pb-5 2xl:px-0'>
+                <div className='flex flex-col mt-[181.75px] sm:mt-0 md:mt-[42vh] lg:mt-0 md:flex-row justify-center md:gap-6 w-full md:max-w-[90%] lg:max-w-full mx-auto pb-5 2xl:px-0'>
                   {/* Video Details */}
-                  <div className="mt-2 md:mt-4 px-4 sm:px-5 md:px-0 md:max-w-[60%] lg:max-w-full">{/* w-fit */}
+                  <div className="mt-2 md:mt-4 px-4 sm:px-5 md:px-0 md:max-w-[60%] lg:max-w-[55%] xl:max-w-[65%] 2xl:max-w-[70%] 3xl:max-w-[67%]">{/* w-fit */}
                     <p className="text-xl">{currentPlaying.videoTitle}</p>
                     <div className="flex flex-col xl:flex-row justify-between mt-1">
                       <div className="text-sm text-gray-400">
@@ -122,13 +122,13 @@ function Watch() {
                       <div
                         className={`${
                           !showMoreStatus ? "max-h-16 overflow-hidden" : ""
-                        } text-sm w-full md:w-11/12`}
+                        } text-sm w-full`}
                       >
                         <pre
                           style={{
                             fontFamily: `"Roboto", sans-serif`,
                           }}
-                          className="whitespace-pre-wrap overflow-x-auto scrollbar-hide lg:scrollbar-default"
+                          className="whitespace-pre-wrap overflow-x-auto scrollbar-hide"
                         >
                           {currentPlaying.videoDescription}
                         </pre>
@@ -144,7 +144,7 @@ function Watch() {
                     </div>
                   </div>
                   {/* Recommended Videos  */}
-                  <div className="flex flex-col gap-3 mt-4 sm:px-4 md:px-0">
+                  <div className="flex flex-col gap-3 mt-4 sm:px-4 md:px-0 3xl:pr-5">
                     {getRecommendedVideos.length && recommendedVideos.map((item) => {
                       return <WatchCard data={item} key={item.videoId} />;
                     })}
