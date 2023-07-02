@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 function SearchCard({ data }: { data: HomePageVideos }) {
     
     return (
-        <div className="group w-full flex flex-col sm:flex-row md:flex-col lg:flex-row gap-3 ">
+        <div className="group w-full flex flex-col sm:flex-row md:flex-col lg:flex-row gap-3 justify-center">
             <div className='relative'>
                 <span className='absolute bottom-1 right-1 text-xs bg-black/80 px-[5px] py-[1px] z-10 rounded-[4px]'>
                     {data.videoDuration}
@@ -20,11 +20,11 @@ function SearchCard({ data }: { data: HomePageVideos }) {
                 </Link>
             </div>
             {/* Video Details starting width 1024px */}
-            <div className="hidden lg:flex flex-col gap-1 ">
+            <div className="hidden relative lg:flex flex-col gap-1 ">
                 <div className='flex justify-between'>
-                    <div className='lg:flex flex-col'>
-                        <h3 className='lg:max-w-[485px] xl:max-w-[664px]'>
-                            <a href="#" className='line-clamp-2 '>
+                    <div className='lg:flex flex-col lg:w-[50vw] xl:w-[665px] 2xl:w-[700px]'>
+                        <h3 className='lg:max-w-[485px] xl:max-w-[664px] 2xl:max-w-[700px]'>
+                            <a href={`/watch/${data.videoId}`} className='line-clamp-2 '>
                                 {data.videoTitle}
                             </a>
                         </h3>
@@ -37,14 +37,14 @@ function SearchCard({ data }: { data: HomePageVideos }) {
                             </span>
                         </div>
                     </div>
-                    <span className='sm:mt-3 md:mt-0'>
+                    <span className='sm:mt-3 md:mt-0 hidden group-hover:block absolute top-0 right-0 xl:right-[-20px] 2xl:right-[-30px]'>
                         <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" >
                           <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
                         </svg>
                     </span>
                 </div>
                 <div className="min-w-fit my-2">
-                    <a href="" className='flex items-center gap-2 text-xs text-gray-400'>
+                    <a href="#video-channel" className='flex items-center gap-2 text-xs text-gray-400'>
                         <img 
                             src={data.channelInfo.image} 
                             alt="" 
@@ -53,7 +53,7 @@ function SearchCard({ data }: { data: HomePageVideos }) {
                         <span>{data.channelInfo.name}</span>
                     </a>
                 </div>
-                <div className="hidden lg:block lg:max-w-[510px] xl:max-w-[664px] line-clamp-2 text-sm text-gray-400">
+                <div className="hidden lg:block lg:max-w-[510px] xl:max-w-[664px] 2xl:max-w-[700px] line-clamp-2 text-sm text-gray-400">
                     <p>{data.videoDescription}</p>
                 </div>
             </div>
