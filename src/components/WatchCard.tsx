@@ -23,13 +23,13 @@ function WatchCard({ data }: { data: RecommendedVideos }) {
             </div>
             <div className="flex flex-col gap-1 w-full px-4 sm:px-0 md:w-[202px]">
                 <h4 className='text-sm'>
-                    <a href="#" className='line-clamp-2'>
+                    <a href={`/watch/${data.videoId}`} className='line-clamp-2'>
                         {data.videoTitle}
                     </a>
                 </h4>
                 <div className='flex md:flex-col lg:flex-row text-xs text-gray-400'>
                     <div>
-                        <a href="#" className='hover:text-white'>
+                        <a href="#channel-name" className='hover:text-white'>
                             {data.channelInfo.name}
                         </a>
                     </div>

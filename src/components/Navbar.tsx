@@ -28,7 +28,7 @@ function Navbar() {
         <div className='flex gap-7 items-center text-2xl lg:mr-9'>
             <GiHamburgerMenu className='hidden lg:block' />
             <Link to="/">
-                <div onClick={() => window.location.reload()} className="flex gap-1 items-center justify-center">
+                <div onClick={() => window.location.href="/"} className="flex gap-1 items-center justify-center">
                     <BsYoutube className="text-3xl text-red-600" />
                     <span className='text-xl font-medium hidden sm:block'>
                         YouTube

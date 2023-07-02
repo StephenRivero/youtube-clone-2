@@ -20,7 +20,7 @@ function Card({ data }: { data: HomePageVideos }) {
             </div>
             <div className="flex gap-3 pl-3 sm:pl-0">
                 <div className="min-w-fit">
-                    <a href="#">
+                    <a href="#channel-logo">
                         <img 
                             src={data.channelInfo.image}
                             alt="channel"
@@ -30,13 +30,13 @@ function Card({ data }: { data: HomePageVideos }) {
                 </div>
                 <div>
                     <h3>
-                        <a href="#" className='line-clamp-2'>
+                        <a href={`/watch/${data.videoId}`} className='line-clamp-2'>
                             {data.videoTitle}
                         </a>
                     </h3>
                     <div className="flex flex-wrap  lg:block text-sm text-gray-400">{/* gap-1 lg:gap-0 */}
                         <div>
-                            <a href="#" className="hover:text-white after:content-['●'] after:p-1 lg:after:content-none after:mx-1 lg:after:mx-0">
+                            <a href="#channel-name" className="hover:text-white after:content-['●'] after:p-1 lg:after:content-none after:mx-1 lg:after:mx-0">
                                 {data.channelInfo.name}
                             </a>
                         </div>

@@ -60,7 +60,7 @@ function SearchCard({ data }: { data: HomePageVideos }) {
             {/* Video Details starting width 640px to before 1024px */}
             <div className="flex sm:w-[60vw] md:w-full sm:flex-col-reverse sm:justify-end md:justify-start md:flex-row lg:hidden sm:gap-1 md:gap-[12px]">
                 <div className="min-w-fit md:mt-[3px]">
-                    <a href="" className='flex items-center gap-2 text-xs text-gray-400 px-2 pt-1 sm:pl-0 sm:pt-0'>
+                    <a href="#video-channel" className='flex items-center gap-2 text-xs text-gray-400 px-2 pt-1 sm:pl-0 sm:pt-0'>
                         <img 
                             src={data.channelInfo.image} 
                             alt="" 
@@ -71,7 +71,7 @@ function SearchCard({ data }: { data: HomePageVideos }) {
                 <div className='flex w-full justify-between'>
                     <div className='flex flex-col'>
                         <h3 className='sm:max-w-[350px] lg:max-w-[500px] xl:max-w-[664px]'>{/*w-full */}
-                            <a href="#" className='line-clamp-2 md:line-clamp-1 lg:line-clamp-2  '>
+                            <a href={`/watch/${data.videoId}`} className='line-clamp-2 md:line-clamp-1 lg:line-clamp-2  '>
                                 {data.videoTitle}
                             </a>
                         </h3>
