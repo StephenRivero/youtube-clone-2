@@ -23,10 +23,6 @@ function Navbar() {
         }
     }
 
-    // function refreshPage() {
-    //     window.location.reload(false);
-    // }
-
   return (
     <div className='flex justify-between items-center px-4 sm:px-[22px] h-14 bg-[#0f0f0f] opacity-95 sticky'> {/* bg-[#212121] */}
         <div className='flex gap-7 items-center text-2xl lg:mr-9'>

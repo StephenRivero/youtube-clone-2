@@ -37,7 +37,7 @@ function Home() {
               next={() => dispatch(getHomePageVideos(true))}
               hasMore={videos.length < 500}
               loader={<Spinner />}
-              height={1024}
+              height={1180}
             >
               <div className='flex flex-wrap justify-center gap-y-2 sm:gap-y-8 gap-x-4 lg:gap-x-8 w-full sm:p-3 lg:p-0 lg:pt-4'>{/* p-4 */}
                 {videos.map((item: HomePageVideos) => {
