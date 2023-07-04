@@ -122,7 +122,7 @@ function Sidebar() {
 
   return (
     <div className="h-[52px] lg:h-fit xl:h-full w-full lg:w-[10%] xl:w-2/12 3xl:w-[12%] bg-[#0f0f0f] lg:pr-1 xl:pr-4 xl:overflow-auto lg:pb-8 sidebar z-20">{/* bg-[#212121] */}
-      <ul className="flex flex-row lg:flex-col xl:border-b-2 xl:border-gray-700 border border-b-transparent border-r-transparent xl:border-r-0 border-l-transparent border-t-gray-700 lg:border-t-transparent">
+      <ul className="flex flex-row lg:flex-col xl:border-b-2 xl:border-b-gray-700 border border-b-transparent border-r-transparent xl:border-r-0 border-l-transparent border-t-gray-700 lg:border-t-[#0f0f0f]">
         {mainLinks.map(({ icon, name }) => {
           return (
             <li
